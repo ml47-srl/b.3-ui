@@ -37,7 +37,7 @@ impl App {
 			if let Some((x, _)) = prim_indices {
 				if x == i as i32 {
 					ncurses::attron(ncurses::COLOR_PAIR(2));
-					ncurses::addch('<' as u64);
+					ncurses::addch('<' as u32);
 					ncurses::attroff(ncurses::COLOR_PAIR(2));
 				}
 			}
@@ -45,25 +45,25 @@ impl App {
 				let (x, y) = sec_indices;
 				if x == i as i32 {
 					ncurses::attron(ncurses::COLOR_PAIR(3));
-					ncurses::addch('<' as u64);
+					ncurses::addch('<' as u32);
 					ncurses::attroff(ncurses::COLOR_PAIR(3));
 				}
 				if y == i as i32 {
 					ncurses::attron(ncurses::COLOR_PAIR(3));
-					ncurses::addch('>' as u64);
+					ncurses::addch('>' as u32);
 					ncurses::attroff(ncurses::COLOR_PAIR(3));
 				}
 			}
 			if let Some((_, y)) = prim_indices {
 				if y == i as i32 {
 					ncurses::attron(ncurses::COLOR_PAIR(2));
-					ncurses::addch('>' as u64);
+					ncurses::addch('>' as u32);
 					ncurses::attroff(ncurses::COLOR_PAIR(2));
 				}
 			}
-			ncurses::addch(string.chars().nth(i).unwrap() as u64);
+			ncurses::addch(string.chars().nth(i).unwrap() as u32);
 		}
-		ncurses::addch('\n' as u64);
+		ncurses::addch('\n' as u32);
 	}
 
 	fn filter_important(&self, i : i32) -> (Option<CellPath>, Vec<CellPath>) {

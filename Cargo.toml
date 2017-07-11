@@ -5,4 +5,4 @@ authors = ["memoryleak47 <memoryleak47@protonmail.ch>"]
 
 [dependencies]
 libsrl = { git = "https://github.com/ml47-srl/b.3-libsrl.git" }
-ncurses = "*"
+ncurses = "5.86"
